@@ -1,5 +1,5 @@
 =============================
-dcengine
+DCEngine
 =============================
 
 Wrapper for django-channels for creating websocket engines.
