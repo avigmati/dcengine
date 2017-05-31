@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DCEngine simply js example</title>
+</head>
+<body>
+
+<script>
+    'use strict';
+    const DCE_SOCKET_URL = 'ws://' + window.location.host + '{{ socket_url_path }}/';
+    const DCE_DEBUG = true;
+{#    console.log(DCE_SOCKET_URL);#}
+</script>
+<script src="{% static 'vanilla_js/js/dist/bundle.js' %}"></script>
+
+{#<script>#}
+{#    'use strict';#}
+{#    import {dce} from 'dcengine';#}
+{##}
+{#    console.log(dce);#}
+{#</script>#}
+
+</body>
+</html>
