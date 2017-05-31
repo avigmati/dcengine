@@ -48,4 +48,4 @@ docs/_build
 
 
 *.sqlite3
-node_modules
+examples/simply_js/vanilla_js/static/vanilla_js/js/node_modules

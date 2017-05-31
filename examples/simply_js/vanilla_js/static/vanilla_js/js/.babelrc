@@ -1,0 +1,9 @@
+{
+  "presets": ["es2017", "stage-0"],
+  "plugins": [
+    "transform-decorators-legacy",
+    "syntax-class-properties",
+    "transform-class-properties",
+    "syntax-async-functions"
+  ]
+}
