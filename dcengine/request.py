@@ -33,12 +33,6 @@ class RequestFactory:
             return ConsumerRequest(self.message, self.content, self.engine_class, self.method_name, self.method_dict)
         else:
             return RpcRequest(self.message, self.content, self.engine_class, self.method_name, self.method_dict)
-        # for a in method_dict['args']:
-        #     arg = self.content.get(a, None)
-        #     if not arg and not arg == {} and not arg == []:
-        #         raise BadRequest('Argument "{}" of method "{}" not specified.'.format(a, action_method))
-        #     self._data += (arg,)
-        #     self.__setattr__(a, arg)
 
 
 class BaseRequest:

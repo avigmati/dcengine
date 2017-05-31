@@ -12,6 +12,10 @@ RESERVED_CLASS_NAMES = [
     'init',
     '__proto__'
 ]
+RESERVED_ACTION_NAMES = [
+    # JavaScript class prototype objects:
+    '__proto__'
+]
 
 
 class RegisterEngine(type):

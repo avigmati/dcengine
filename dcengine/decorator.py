@@ -2,6 +2,7 @@ from functools import wraps
 
 from .exceptions import *
 from .response import Msg
+from .base import RESERVED_ACTION_NAMES
 
 
 class BaseActionDecorator:
@@ -10,8 +11,8 @@ class BaseActionDecorator:
     Checks action declaration
     """
     def __init__(self, f):
-        if '__' in f.__name__:
-            raise BadAction('Bad action declaration: {}, "__" is reserved.'.format(f.__name__))
+        if f.__name__ in RESERVED_ACTION_NAMES:
+            raise BadAction('Bad action declaration: {}  is reserved. See: base.RESERVED_ACTION_NAMES.'.format(f.__name__))
 
 
 class ConsumerAction(BaseActionDecorator):
