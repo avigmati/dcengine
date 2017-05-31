@@ -1,6 +1,6 @@
 from .exceptions import *
 
-VERSION = '1.0.0'
+VERSION = '1.0.2'
 
 ENGINE_CLASSES = []
 REGISTERED_CLASS_NAMES = []
