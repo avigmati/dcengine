@@ -1,3 +1,2 @@
-django
-channels
-wheel
+django>=1.8
+channels>=1.0.3

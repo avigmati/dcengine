@@ -10,9 +10,12 @@ except ImportError:
     from distutils.core import setup
 
 
+BASEDIR = os.path.dirname(__file__)
+
+
 def get_version(*file_paths):
     """Retrieves the version from dcengine/base.py"""
-    filename = os.path.join(os.path.dirname(__file__), *file_paths)
+    filename = os.path.join(BASEDIR, *file_paths)
     version_file = open(filename).read()
     version_match = re.search(r"^VERSION = ['\"]([^'\"]*)['\"]",
                               version_file, re.M)
@@ -40,25 +43,20 @@ if sys.argv[-1] == 'tag':
     os.system("git push --tags")
     sys.exit()
 
-readme = open('README.rst').read()
-history = open('HISTORY.rst').read().replace('.. :changelog:', '')
+readme = open(os.path.join(BASEDIR, 'README.rst')).read()
 
 setup(
     name='dcengine',
     version=version,
     description="""Wrapper for django-channels for creating websocket engines.""",
-    long_description=readme + '\n\n' + history,
-    author='avig',
+    long_description=readme,
+    author='avigmati',
     author_email='avigmati@gmail.com',
     url='https://github.com/avigmati/dcengine',
     packages=[
         'dcengine',
     ],
-    include_package_data=False,
-    install_requires=[
-        'django',
-        'channels'
-    ],
+    include_package_data=True,
     license="BSD",
     zip_safe=False,
     keywords='django channels engine',
